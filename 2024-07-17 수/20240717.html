@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20240717 - Homework</title>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="top">
+                <div class="inner">
+                    <ul>
+                        <li>menu1</li>
+                        <li>menu2</li>
+                        <li>menu3</li>
+                        <li>menu4</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="main">
+                <div class="inner">
+                    <h2>게시판</h2>
+                    <div class="function">
+                        <input class="inputText" type="text" />
+                        <button class="descSearch">첨부파일 검색</button>
+                        <button class="nameSearch">이름순정렬</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>번호</td>
+                                <td>이름</td>
+                                <td>나이</td>
+                                <td>회사주소</td>
+                                <td>첨부파일</td>
+                            </tr>
+                        </thead>
+                        <tbody class="tableData"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="bottom">
+                <div class="inner"></div>
+            </div>
+        </div>
+        <script>
+            'use strict';
+            const data = [
+                { id: 1, name: 'Jane Cooper', age: 20, addr: 'Gillette', desc: 'doument_1.pdf' },
+                { id: 2, name: 'Wade Warren', age: 31, addr: 'Ferrari', desc: 'forward statement item 2.txt' },
+                { id: 3, name: 'Esther Howard', age: 24, addr: 'Louis Vuitton', desc: 'ATTACHEMENT 836128956.html' },
+                { id: 4, name: 'Cameron Williamson', age: 54, addr: 'The Walt Disney Company', desc: 'DF_ASKD_UED_changed_2393.pdf' },
+                { id: 5, name: 'Brooklyn Simmons', age: 19, addr: 'Louis Vuitton', desc: 'legal-tenure.pdf' },
+                { id: 6, name: 'Leslie Alexander', age: 37, addr: 'IBM', desc: 'Draft1-changes-in.red-from-Simon.doc' },
+                { id: 7, name: 'Jenny Wilson', age: 27, addr: 'MasterCard', desc: 'README.rm' },
+                { id: 8, name: 'Guy Hawkins', age: 23, addr: 'Nintendo', desc: 'picture1.jpeg' },
+                { id: 9, name: 'Robert Fox', age: 34, addr: 'Facebook', desc: 'FunnyMemeOMG.gif' },
+                { id: 10, name: 'Jacob Jones', age: 26, addr: 'Starbucks', desc: 'settlement.from.client.5126.in.case.45.docx' },
+            ];
+
+            // 정의
+            let tableData = document.querySelector('.tableData');
+            let text = '';
+
+            // map을 이용해 배열을 붙히는데 자동 생성되는 ','를 삭제 함수
+            const deleteRest = (text) => {
+                let strText = text;
+                strText = String(text).replaceAll(',', '');
+                return strText;
+            };
+
+            // 기본 배열 출력
+            const displayArray = () => {
+                text = data.map((item) => {
+                    return `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.age}</td><td>${item.addr}</td><td>${item.desc}</td></tr>`;
+                });
+                let transText = deleteRest(text);
+                tableData.innerHTML = transText;
+            };
+
+            window.addEventListener('load', () => {
+                displayArray();
+            });
+
+            // input
+            let inputText = document.querySelector('.inputText');
+
+            // 내용검색
+            let descNewArray = [];
+            let descSearch = document.querySelector('.descSearch');
+            descSearch.addEventListener('click', () => {
+                descNewArray = []; // 포함된 데이터 넣을 새로운 배열 초기화
+                data.map((item, idx) => {
+                    if (item.desc.includes(inputText.value)) {
+                        return (descNewArray = descNewArray.concat(data[idx]));
+                    }
+                });
+                text = descNewArray.map((item) => {
+                    return `<tr>
+                            <td>${item.id}</td>
+                            <td>${item.name}</td>
+                            <td>${item.age}</td>
+                            <td>${item.addr}</td>
+                            <td>${item.desc}</td>
+                            </tr>`;
+                });
+                let transText = deleteRest(text);
+                tableData.innerHTML = transText;
+                inputText.value = '';
+            });
+
+            // 이름순정렬
+            let descSortArray = [];
+            let nameSearch = document.querySelector('.nameSearch');
+            nameSearch.addEventListener('click', () => {
+                descSortArray = []; // 포함된 데이터 넣을 새로운 배열 초기화
+                descSortArray = descSortArray.concat(data); // 배열 합치기
+                descSortArray.sort((a, b) => {
+                    return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
+                });
+                text = descSortArray.map((item) => {
+                    return `<tr>
+                            <td>${item.id}</td>
+                            <td>${item.name}</td>
+                            <td>${item.age}</td>
+                            <td>${item.addr}</td>
+                            <td>${item.desc}</td>
+                            </tr>`;
+                });
+                let transText = deleteRest(text);
+                tableData.innerHTML = transText;
+                inputText.value = '';
+            });
+        </script>
+    </body>
+</html>

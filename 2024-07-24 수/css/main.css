@@ -1,0 +1,165 @@
+#wrap {
+    width: 100%;
+    min-width: 1600px;
+}
+
+.inner {
+    width: 1180px;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#top {
+    width: 100%;
+    background-color: black;
+}
+
+#top .inner {
+    height: 126px;
+}
+
+#main {
+    width: 100%;
+    background-color: black;
+}
+
+#main .inner {
+    height: 700px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .inner .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 600px;
+    align-content: center;
+}
+
+#main .inner .left p {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+#main .inner .left img {
+    padding-left: 20px;
+    width: 600px;
+    border-radius: 10%;
+}
+#main .inner .right {
+    position: absolute;
+    top: 0;
+    left: 58%;
+    height: 100%;
+    align-content: center;
+}
+
+#main .inner .right ul li {
+    padding: 10px;
+    height: 100px;
+    width: 450px;
+}
+#main .inner .right ul li:nth-child(1) {
+    border-top: 2px solid black;
+}
+
+#main .inner .right ul li {
+    border-bottom: 2px solid gray;
+}
+
+#main .inner .right ul li.on {
+    border-bottom: 2px solid peru;
+}
+
+#main .inner .right ul li h2 {
+    width: 350px;
+    font-weight: 600;
+    /* 말줄임표 css */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#main .inner .right ul li h2.on {
+    color: peru;
+}
+
+#main .inner .right ul li p {
+    padding-top: 40px;
+}
+
+#main .inner .right ul li div {
+    position: absolute;
+    right: 1%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 20%;
+}
+
+#main .inner .right ul li div img {
+    transition: 1s;
+}
+
+#main .inner .right ul li:hover div img {
+    transform: scale(110%);
+}
+
+/* _______________________________________________________________________ */
+
+#main .inner .right ul li:nth-child(1) div {
+    top: 9%;
+}
+#main .inner .right ul li:nth-child(2) div {
+    top: 26%;
+}
+#main .inner .right ul li:nth-child(3) div {
+    top: 43%;
+}
+#main .inner .right ul li:nth-child(4) div {
+    top: 61%;
+}
+#main .inner .right ul li:nth-child(5) div {
+    top: 78%;
+}
+
+/* _______________________________________________________________________ */
+
+#main .inner .right ul li:nth-child(1):hover {
+    background: palegoldenrod;
+}
+
+#main .inner .right ul li:nth-child(2):hover {
+    background: palegoldenrod;
+}
+
+#main .inner .right ul li:nth-child(3):hover {
+    background: palegoldenrod;
+}
+
+#main .inner .right ul li:nth-child(4):hover {
+    background: palegoldenrod;
+}
+
+#main .inner .right ul li:nth-child(5):hover {
+    background: palegoldenrod;
+}
+
+/* _______________________________________________________________________ */
+
+#bottom {
+    width: 100%;
+    background-color: black;
+}
+
+#bottom .inner {
+    height: 127px;
+}

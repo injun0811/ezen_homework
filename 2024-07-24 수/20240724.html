@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20240724 - Homework</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="top"><div class="inner"></div></div>
+            <div id="main">
+                <div class="inner">
+                    <div class="left">
+                        <p></p>
+                        <img src="" alt="" />
+                    </div>
+                    <div class="right">
+                        <ul>
+                            <li>
+                                <h2></h2>
+                                <p></p>
+                                <div>
+                                    <img src="" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <p></p>
+                                <div>
+                                    <img src="" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <p></p>
+                                <div>
+                                    <img src="" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <p></p>
+                                <div>
+                                    <img src="" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <p></p>
+                                <div>
+                                    <img src="" alt="" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom"><div class="inner"></div></div>
+        </div>
+    </body>
+    <!-- 
+        [check]     1. 작은 이미지 5개, 선택 시, 보여줄 큰 사이즈 이미지 5개 (총 10개)
+        [check]     2. 간단한 멘트 필요 (title, date)
+        [check]     3-1. 클릭 시, 선택된 컨텐츠 아랫줄 색상 변경 및 타이틀 color 수정
+        [check]     3-2. 이미지에 마우스 호버 시, 확대 (transform : scale() 처리)
+        [check]     3-3. 클릭 시, 왼쪽 큰 사이즈 이미지 및 타이틀 옮김 처리
+        [check]     3-4. 글자가 사이즈보다 오버되면 '...' 처리
+        [check]     4. 시간 부여해서 2초마다 수정되도록 처리
+        [check]     5. 함수화 및 간략화
+    -->
+    <script>
+        'use strict';
+        const data = [
+            { id: 1, title: '에스프레소: 진한 커피로, 작은 컵에 제공되며 강한 맛과 아로마가 특징입니다.', date: '2024-07-01' },
+            { id: 2, title: '콜드 브루: 차가운 물로 장시간 추출하여 부드럽고 깔끔한 맛이 특징인 아이스 커피입니다.', date: '2024-07-12' },
+            { id: 3, title: '라떼: 에스프레소와 스팀 밀크를 섞어 부드럽고 크리미한 맛을 자랑합니다.', date: '2024-07-08' },
+            { id: 4, title: '카푸치노: 에스프레소, 스팀 밀크, 그리고 우유 거품이 조화를 이루는 커피입니다.', date: '2024-07-15' },
+            { id: 5, title: '아메리카노: 에스프레소에 뜨거운 물을 더해 연하게 만든 커피입니다.', date: '2024-07-22' },
+        ];
+
+        let pB = document.querySelector('#main .inner .left p');
+        let imgB = document.querySelector('#main .inner .left img');
+
+        let lis = document.querySelectorAll('#main .inner .right ul li');
+        let h2 = document.querySelectorAll('#main .inner .right ul li h2');
+        let pS = document.querySelectorAll('#main .inner .right ul li p');
+        let imgS = document.querySelectorAll('#main .inner .right ul li img');
+
+        let cnt = 0;
+        let size = data.length;
+
+        let timer = null,
+            interval = 2000;
+
+        // 초기값
+        pB.textContent = data[0].title;
+        imgB.setAttribute('src', `images/big/${data[0].id}.png`);
+        h2[cnt].classList.add('on');
+        lis[cnt].classList.add('on');
+
+        // right
+        data.forEach((item, idx) => {
+            h2[idx].textContent = item.title;
+            pS[idx].textContent = item.date;
+            imgS[idx].setAttribute('src', `images/small/${idx + 1}.png`);
+        });
+
+        // click
+        data.forEach((item, idx) => {
+            lis[idx].addEventListener('click', () => {
+                cnt = idx - 1;
+                defualt();
+                clearInterval(timer);
+                timer = setInterval(defualt, interval);
+            });
+        });
+
+        // defualt
+        const defualt = () => {
+            cnt = cnt < size ? cnt + 1 : 0;
+            console.log(data[cnt].title);
+            pB.textContent = data[cnt].title;
+            imgB.setAttribute('src', `images/big/${cnt + 1}.png`);
+            data.forEach((i, v) => {
+                h2[v].classList.remove('on');
+                lis[v].classList.remove('on');
+            });
+
+            h2[cnt].classList.add('on');
+            lis[cnt].classList.add('on');
+        };
+
+        // timer
+        timer = setInterval(defualt, interval);
+    </script>
+</html>

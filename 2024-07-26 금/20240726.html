@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20240726 - Homework</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="top"><div class="inner"></div></div>
+            <div id="main">
+                <div class="inner">
+                    <div class="picCard">
+                        <ul></ul>
+                    </div>
+                    <button>더보기</button>
+                    <div class="outPic"></div>
+                </div>
+            </div>
+            <div id="bottom"><div class="inner"></div></div>
+        </div>
+    </body>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let outPic = document.querySelector('.outPic');
+        let ul = document.querySelector('.picCard ul');
+        let btns = document.querySelector('button');
+        let lis = '';
+        let imgs = '';
+        let innerPic = '';
+
+        let p,
+            img = '';
+        let closeBtn,
+            prevBtn,
+            nextBtn = '';
+
+        // 기본 펼처진 사진
+        let cnt = 7;
+        let picNum = 0;
+
+        // 클릭한 사진의 id
+        let picId = 0;
+
+        const picMaker = () => {
+            for (picNum; picNum < cnt + 1; picNum++) {
+                lis = document.createElement('li');
+                ul.append(lis);
+                imgs = document.createElement('img');
+                lis.append(imgs);
+                imgs.setAttribute('src', `images/Rectangle${picNum + 1}.png`);
+                imgs.setAttribute('data-img-num', `${picNum + 1}`);
+            }
+            lis = document.querySelectorAll('.picCard ul li');
+            imgs = document.querySelectorAll('.picCard ul li img');
+
+            // 클릭 시, div 생성
+            imgs.forEach((item, idx) => {
+                item.addEventListener('click', (e) => {
+                    picId = e.target.dataset.imgNum;
+                    let inner = `
+                    <div class='innerPic'>
+                        <p>image ${picId} of 24</p>
+                        <i class="xi-close"></i>
+                        <img src='images/Rectangle${picId}.png'>
+                        <i class="xi-arrow-left"></i>
+                        <i class="xi-arrow-right"></i>
+                    </div>
+                    `;
+
+                    outPic.innerHTML = inner;
+
+                    // innerHTML 이후 재선언
+                    innerPic = document.querySelector('.innerPic');
+                    p = document.querySelector('.innerPic p');
+                    img = document.querySelector('.innerPic img');
+
+                    closeBtn = document.querySelector('.xi-close');
+                    prevBtn = document.querySelector('.xi-arrow-left');
+                    nextBtn = document.querySelector('.xi-arrow-right');
+
+                    // 트랜지션 효과 적용
+                    setTimeout(() => {
+                        innerPic.classList.add('show');
+                    }, 10);
+
+                    // 닫기
+                    closeBtn.addEventListener('click', (e) => {
+                        innerPic.classList.remove('show');
+                        setTimeout(() => {
+                            e.target.parentElement.remove();
+                        }, 500);
+                    });
+
+                    // 이전 버튼
+                    prevBtn.addEventListener('click', (e) => {
+                        if (picId > 1) picId--;
+                        else picId = 24;
+                        img.setAttribute('src', `images/Rectangle${picId}.png`);
+                        p.textContent = `image ${picId} of 24`;
+                    });
+
+                    // 다음 버튼
+                    nextBtn.addEventListener('click', (e) => {
+                        if (picId < 24) picId++;
+                        else picId = 1;
+                        img.setAttribute('src', `images/Rectangle${picId}.png`);
+                        p.textContent = `image ${picId} of 24`;
+                    });
+                });
+            });
+        };
+
+        picMaker();
+
+        // 더보기
+        btns.addEventListener('click', () => {
+            if (cnt < 23) {
+                cnt += 4;
+                picMaker();
+            }
+        });
+    </script>
+</html>

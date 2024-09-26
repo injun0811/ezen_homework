@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/btn.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+    </head>
+    <body>
+        <main id="container" class="cart">
+            <section id="content">
+                <div class="inner">
+                    <h2>제품리스트</h2>
+                    <ul>
+                        <!-- li삭제후 innerHTML로 작성 -->
+                        <!-- 
+                        <li>
+                            <img src="images/thum0.jpg" alt="" />
+                            <div class="price">xx</div>
+                            <div class="nums">
+                                <div class="minus">-</div>
+                                <span>xx</span>
+                                <div class="plus">+</div>
+                            </div>
+                            <div class="calPrice"></div>
+                            <p></p>
+                            <div class="del">X</div>
+                        </li>
+                        -->
+                    </ul>
+                    <p class="comment"></p>
+                    <div class="result">총금액 : 0 원</div>
+                    <div class="reset">모든 상품 초기화</div>
+                </div>
+            </section>
+        </main>
+        <script src="js/app.js"></script>
+        <pre>
+            <!-- 1. data-set 부여
+                li 부분에 data-set을 활용해 각각 하위 태그들의 컨트롤을 data-set의 값으로 활용하기 위해 index 생성
+            2. 스타일 (비어놓고 transform 처리)
+                2-1. - 버튼 : ---- 길었다가 짧아지면서 - 가 되도록 처리
+                2-2. + 버튼 : 직선 두개가 길었던 선들이 짧아지면서 + 가 되도록 처리
+                2-3. x 버튼 : 가로 세로 두 직선이 보이면서 돌아가서 x 가 되도록 처리
+            3. li마다 hover 처리(background)
+            4. + 버튼 기능 (각 index 마다 배열에 삽입 처리)
+            5. - 버튼 기능 (각 index 마다 배열에 삽입 처리) (0보다 아래이면 내려가지 않도록 처리)
+            6. x 버튼 기능 (index 받아서 li 삭제 처리)
+            7. 총 금액, 배열 처음부터 곱해서 총 합산 처리 -->
+        </pre>
+    </body>
+</html>

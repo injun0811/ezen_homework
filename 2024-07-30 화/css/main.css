@@ -1,0 +1,237 @@
+#wrap {
+    width: 100%;
+    min-width: 1600px;
+}
+
+.inner {
+    width: 1180px;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#top {
+    width: 100%;
+    background-color: black;
+}
+
+#top .inner {
+    height: 126px;
+}
+
+#main {
+    width: 100%;
+    background-color: black;
+}
+
+#main .inner {
+    height: 700px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .inner .header {
+    height: 50px;
+    width: 300px;
+    background: palevioletred;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: absolute;
+    top: 3%;
+    right: 0;
+    align-content: center;
+    text-align: left;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#main .inner .header p {
+    padding-left: 40px;
+}
+
+#main .inner .photoList {
+    /* background: palegoldenrod; */
+    width: 1100px;
+    height: 600px;
+}
+
+#main .inner .photoList ul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#main .inner .photoList ul li {
+    padding: 10px;
+}
+
+#main .inner .photoList ul li:hover img {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+#main .inner .photoList ul li.active img {
+    outline-width: 4px;
+    outline-color: palevioletred;
+    outline-style: solid;
+}
+
+/* ------------------------------------------------- */
+
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* 다른 부분보다 우선순위 */
+    z-index: 1;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.bg.on {
+    opacity: 0.5;
+    visibility: visible;
+}
+
+#main .inner .desc {
+    width: 600px;
+    height: 550px;
+    background: white;
+    position: absolute;
+    top: 7%;
+    left: 24.5%;
+    padding: 25px;
+    /* 배경보다 우선순위로 둬야 배경 모든 부분이 클릭되며 팝업창이 닫힘 (배경은 z-index: 1;) */
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#main .inner .desc.on {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ------------------------------------------------- */
+
+#main .inner .desc h2 {
+    font-size: 25px;
+    position: absolute;
+    top: 4%;
+    left: 15%;
+}
+
+#main .inner .desc h3 {
+    font-size: 20px;
+    position: absolute;
+    left: 15%;
+    top: 92%;
+    width: 450px;
+    height: 30px;
+    /* 말줄임표 css */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#main .inner .desc p {
+    font-size: 20px;
+    position: absolute;
+    top: 86%;
+    left: 15%;
+}
+
+#main .inner .desc i {
+    font-size: 35px;
+}
+
+#main .inner .desc div {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+}
+
+#main .inner .desc .xi-close-square-o {
+    font-size: 40px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+}
+#main .inner .desc .xi-close-square-o:hover {
+    color: slateblue;
+}
+
+#main .inner .desc .xi-play-circle {
+    position: absolute;
+    top: 86%;
+    right: 15%;
+    cursor: pointer;
+}
+#main .inner .desc .xi-play-circle:hover {
+    color: slateblue;
+}
+
+#main .inner .desc .xi-pause-circle {
+    position: absolute;
+    top: 86%;
+    right: 15%;
+    cursor: pointer;
+}
+#main .inner .desc .xi-pause-circle:hover {
+    color: slateblue;
+}
+
+#main .inner .desc .left {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    cursor: pointer;
+}
+#main .inner .desc .left:hover {
+    color: slateblue;
+}
+
+#main .inner .desc .right {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    cursor: pointer;
+}
+#main .inner .desc .right:hover {
+    color: slateblue;
+}
+
+#main .inner button {
+    position: absolute;
+    bottom: 6%;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background: black;
+}
+
+#bottom {
+    width: 100%;
+    background-color: black;
+}
+
+#bottom .inner {
+    height: 127px;
+}

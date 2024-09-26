@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20240718 - Homework</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="top">
+                <div class="inner">
+                    <ul>
+                        <li>menu1</li>
+                        <li>menu2</li>
+                        <li>menu3</li>
+                        <li>menu4</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="main">
+                <div class="inner">
+                    <div class="small">
+                        <div class="photoOut">
+                            <div class="photoIn">
+                                <img src="" alt="" />
+                                <div class="left"><i class="xi-long-arrow-left"></i></div>
+                                <div class="right"><i class="xi-long-arrow-right"></i></div>
+                                <h2></h2>
+                                <p></p>
+                                <span></span>
+                            </div>
+                        </div>
+                        <p class="paging"></p>
+                    </div>
+                    <div class="big"><img src="" alt="" /></div>
+                </div>
+            </div>
+            <div id="bottom">
+                <div class="inner"></div>
+            </div>
+        </div>
+        <script>
+            'use strict';
+            const data = [
+                { id: 1, name: 'Turtle', desc: '느리지만 꾸준한 생명력의 상징', date: '2024.07.03' },
+                { id: 2, name: 'Eagle', desc: '날카로운 시력과 강인한 비행 능력을 가진 맹금류', date: '2024.06.15' },
+                { id: 3, name: 'White Tiger', desc: '희귀하고 아름다운 백색 변이 호랑이', date: '2024.05.22' },
+                { id: 4, name: 'Raccoon', desc: '지능적이고 손재주가 뛰어난 야행성 동물', date: '2024.07.11' },
+                { id: 5, name: 'Squirrel', desc: '나무를 재빠르게 오르내리는 귀여운 설치류', date: '2024.06.30' },
+                { id: 6, name: 'Dog', desc: '인간의 가장 친한 친구로 알려진 충직한 동물', date: '2024.07.08' },
+                { id: 7, name: 'Mouse', desc: '작고 민첩하며 높은 적응력을 가진 포유류', date: '2024.05.19' },
+                { id: 8, name: 'Snake', desc: '유연한 몸체로 땅을 미끄러지듯 이동하는 파충류', date: '2024.06.07' },
+                { id: 9, name: 'Parrot', desc: '화려한 깃털과 뛰어난 모방 능력을 가진 조류', date: '2024.07.01' },
+                { id: 10, name: 'Rabbit', desc: '긴 귀와 빠른 달리기 속도로 유명한 초식 동물', date: '2024.06.25' },
+            ];
+
+            let cnt = 0;
+            let timer,
+                interval = 2000;
+            let size = data.length;
+
+            // text
+            let smallH2 = document.querySelector('.small .photoOut .photoIn h2');
+            let smallP = document.querySelector('.small .photoOut .photoIn p');
+            let smallSpan = document.querySelector('.small .photoOut .photoIn span');
+            let p = document.querySelector('.small .paging');
+
+            // img
+            let smallImg = document.querySelector('.small .photoOut .photoIn img');
+            let bigImg = document.querySelector('.big img');
+
+            // left, right button
+            let leftBtn = document.querySelector('.small .photoOut .photoIn .left');
+            let rightBtn = document.querySelector('.small .photoOut .photoIn .right');
+
+            // load 시 호출 함수
+            window.addEventListener('load', () => {
+                smallH2.textContent = data[0].name;
+                smallP.textContent = data[0].desc;
+                smallSpan.textContent = data[0].date;
+                p.textContent = data[0].id + ' / ' + data.length;
+                smallImg.setAttribute('src', `./images/small/image${0}.png`);
+                bigImg.setAttribute('src', `./images/big/image${0}.png`);
+            });
+
+            // 화면 표출 함수
+            const photoMoving = (number) => {
+                let cnt = number;
+                smallH2.textContent = data[cnt].name;
+                smallP.textContent = data[cnt].desc;
+                smallSpan.textContent = data[cnt].date;
+                p.textContent = data[cnt].id + ' / ' + data.length;
+                smallImg.setAttribute('src', `./images/small/image${cnt}.png`);
+                bigImg.setAttribute('src', `./images/big/image${cnt}.png`);
+                smallImg.animate([{ opacity: 0 }, { opacity: 1 }], 500);
+                bigImg.animate([{ opacity: 0 }, { opacity: 1 }], 500);
+            };
+
+            // left 버튼 클릭 함수
+            leftBtn.addEventListener('click', () => {
+                cnt > 0 ? cnt-- : (cnt = 9);
+                photoMoving(cnt);
+                clearInterval(timer);
+                timer = setInterval(make, interval);
+            });
+
+            // right 버튼 클릭 함수
+            rightBtn.addEventListener('click', () => {
+                cnt < size - 1 ? cnt++ : (cnt = 0);
+                photoMoving(cnt);
+                clearInterval(timer);
+                timer = setInterval(make, interval);
+            });
+
+            // 타이머 설정
+            timer = setInterval(make, interval);
+            function make() {
+                cnt < size - 1 ? cnt++ : (cnt = 0);
+                photoMoving(cnt);
+            }
+        </script>
+    </body>
+</html>

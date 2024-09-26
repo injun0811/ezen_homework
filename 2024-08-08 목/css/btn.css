@@ -1,0 +1,489 @@
+/* -------------------- minus -------------------- */
+.inner ul li:nth-child(1) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 21.3%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(1) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+
+.inner ul li:nth-child(2) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 32.5%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(2) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+
+.inner ul li:nth-child(3) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 43.8%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(3) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+
+.inner ul li:nth-child(4) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(4) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+
+.inner ul li:nth-child(5) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 66.2%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(5) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+
+.inner ul li:nth-child(6) .minus::after {
+    content: '';
+    width: 1px;
+    border: 0px solid #000;
+    position: absolute;
+    top: 77.4%;
+    left: 45%;
+    transition: all 0.5s;
+}
+.inner ul li:nth-child(6) .minus:hover::after {
+    border: 1px solid #000;
+    transform: scaleX(10) rotate(90deg);
+}
+/* -------------------- minus end -------------------- */
+/* -------------------- plus -------------------- */
+.inner ul li:nth-child(1) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 20%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(1) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(1) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 21.1%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(1) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+
+.inner ul li:nth-child(2) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 31.2%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(2) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(2) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 32.1%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(2) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+
+.inner ul li:nth-child(3) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 42.5%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(3) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(3) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 43.5%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(3) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+
+.inner ul li:nth-child(4) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 53.5%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(4) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(4) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 54.6%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(4) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+
+.inner ul li:nth-child(5) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 64.8%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(5) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(5) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 65.8%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(5) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+
+.inner ul li:nth-child(6) .plus::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 76%;
+    left: 51.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg);
+}
+.inner ul li:nth-child(6) .plus:hover::before {
+    left: 51.7%;
+    width: 5px;
+    height: 25px;
+    transform: scaleY(1) skewY(0deg);
+}
+.inner ul li:nth-child(6) .plus::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 77%;
+    transform: scaleX(0);
+}
+.inner ul li:nth-child(6) .plus:hover::after {
+    left: 51.2%;
+    width: 25px;
+    height: 5px;
+    transform: scaleX(1);
+}
+/* -------------------- plus end-------------------- */
+/* -------------------- delete -------------------- */
+.inner ul li:nth-child(1) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(1) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(1) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(1) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+
+.inner ul li:nth-child(2) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(2) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(2) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(2) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+
+.inner ul li:nth-child(3) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(3) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(3) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(3) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+
+.inner ul li:nth-child(4) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(4) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(4) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(4) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+
+.inner ul li:nth-child(5) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(5) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(5) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(5) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+
+.inner ul li:nth-child(6) .del::before {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(6) .del:hover::before {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(40deg);
+}
+.inner ul li:nth-child(6) .del::after {
+    content: '';
+    background: black;
+    position: absolute;
+    transition: all 0.5s;
+    top: 36%;
+    left: 15.6%;
+    height: 25px;
+    width: 10px;
+    transform: scaleY(0) skewY(0deg) rotate(0deg);
+}
+.inner ul li:nth-child(6) .del:hover::after {
+    left: 43.7%;
+    width: 5px;
+    height: 15px;
+    transform: scaleY(1.4) skewY(0deg) rotate(-40deg);
+}
+/* -------------------- delete end-------------------- */

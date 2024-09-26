@@ -1,0 +1,112 @@
+#wrap {
+    width: 100%;
+    min-width: 1600px;
+}
+
+.inner {
+    width: 1180px;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#top {
+    width: 100%;
+    background-color: black;
+}
+
+#top .inner {
+    height: 126px;
+}
+
+#main {
+    width: 100%;
+    background-color: black;
+}
+
+#main .inner {
+    height: 700px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .inner .txt {
+    width: 500px;
+    height: 500px;
+    /* border: 1px solid #000; */
+}
+
+#main .inner .txt ul li {
+    padding: 27.5px;
+    border-bottom: 1px solid gray;
+    margin-right: 30px;
+}
+
+#main .inner .txt ul li.on {
+    border-bottom: 2px solid palegreen;
+}
+
+#main .inner .txt ul li div {
+    cursor: pointer;
+}
+
+#main .inner .txt ul div:hover {
+    border-bottom: 2px solid white;
+    color: white;
+    background-color: palegreen;
+    transition: 0.5s;
+}
+
+#main .inner .txt ul li div h2 {
+    font-size: 25px;
+}
+
+#main .inner .txt ul li.on div h2 {
+    color: palegreen;
+}
+
+#main .inner .txt ul li div p {
+    font-size: 23px;
+}
+
+#main .inner .photo {
+    width: 500px;
+    height: 500px;
+    /* border: 1px solid #000; */
+}
+
+#main .inner .photo img {
+    height: 100%;
+    width: 100%;
+}
+
+#main .inner .left img {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    height: 60px;
+    width: 60px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+#main .inner .right img {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+#bottom {
+    width: 100%;
+    background-color: black;
+}
+
+#bottom .inner {
+    height: 127px;
+}
